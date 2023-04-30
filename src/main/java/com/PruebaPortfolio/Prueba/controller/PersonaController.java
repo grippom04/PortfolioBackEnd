@@ -16,10 +16,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/persona")
 @CrossOrigin(origins = "https://portfoliofrontend-3f1ea.web.app")
 public class PersonaController {
     
@@ -27,31 +29,31 @@ public class PersonaController {
     private IPersonaService persoService;
 
     //@PreAuthorize("hasRole('ADMIN')")
-    @PostMapping("/persona/set")
+    @PostMapping("/set")
     public void setPersona(@RequestBody Persona p){
        persoService.setPersona(p);
     }
     
     //@PreAuthorize("hasRole('ADMIN')")
-    @DeleteMapping("/persona/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public void wipePersona(@PathVariable Long id){
            persoService.wipePersona(id);
     }
     
-    @GetMapping("/persona/get/{id}")
+    @GetMapping("/get/{id}")
     @ResponseBody
     public Persona getPersona(@PathVariable Long id){
         return persoService.getPersona(id);
     }
     
-    @GetMapping("/persona/getAll")
+    @GetMapping("/getAll")
     @ResponseBody
     public List<Persona> getAll(){
         return persoService.getAllPersona();
     }
     
     //@PreAuthorize("hasRole('ADMIN')")
-    @PutMapping("/persona/edit")
+    @PutMapping("/edit")
     public void editPersona(@RequestBody Persona p){
         persoService.editPersona(p);
     }

@@ -26,14 +26,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
-//@RequestMapping("experiencia")
+@RequestMapping("/experiencia")
+@CrossOrigin(origins = "https://portfoliofrontend-3f1ea.web.app")
 public class ExperienciaController {
     
     @Autowired
     IExperienciaService iExperienciaService;
     
-    @PostMapping("/experiencia/set")
+    @PostMapping("/set")
     public ResponseEntity<?> setExperiencia(@RequestBody DtoExperiencia dtoExperiencia){
         if(StringUtils.isBlank(dtoExperiencia.getNombre_compania()) ||
            StringUtils.isBlank(dtoExperiencia.getNombre_trabajo()) ||
@@ -55,7 +55,7 @@ public class ExperienciaController {
     }
     
     //@PreAuthorize("hasRole('ADMIN')")
-    @DeleteMapping("/experiencia/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> wipeExperiencia(@PathVariable Long id){
         if(iExperienciaService.existById(id)){
             iExperienciaService.wipeExperiencia(id);
@@ -67,20 +67,20 @@ public class ExperienciaController {
           
     }
     
-    @GetMapping("/experiencia/get/{id}")
+    @GetMapping("/get/{id}")
     @ResponseBody
     public Experiencia getExperiencia(@PathVariable Long id){
         return iExperienciaService.getExperiencia(id);
     }
     
-    @GetMapping("/experiencia/getAll")    
+    @GetMapping("/getAll")    
     public ResponseEntity<List<Experiencia>> getAllExperiencia(){
         List<Experiencia> list = iExperienciaService.getAllExperiencia();
         return new ResponseEntity(list,HttpStatus.OK);
     }
     
     //@PreAuthorize("hasRole('ADMIN')")
-    @PutMapping("/experiencia/edit")
+    @PutMapping("/edit")
     public ResponseEntity<?> editExperiencia(@RequestBody  DtoExperiencia dtoExperiencia){
         
         if( StringUtils.isBlank(dtoExperiencia.getNombre_trabajo()) ||

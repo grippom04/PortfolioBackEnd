@@ -20,17 +20,19 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/educacion")
 @CrossOrigin(origins = "http://localhost:4200")
 public class EducacionController {
     
     @Autowired
     IEducacionService iEducacionService;
     
-    @PostMapping("/educacion/set")
+    @PostMapping("/set")
     public ResponseEntity<?> setEducacion(@RequestBody DtoEducacion dtoEducacion){
         if(StringUtils.isBlank(dtoEducacion.getNombre_colegio()) ||
            StringUtils.isBlank(dtoEducacion.getNombre_titulo()) ||
@@ -52,7 +54,7 @@ public class EducacionController {
     }
     
     //@PreAuthorize("hasRole('ADMIN')")
-    @DeleteMapping("/educacion/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> wipeEducacion(@PathVariable Long id){
         if(iEducacionService.existById(id)){
             iEducacionService.wipeEducacion(id);
@@ -63,20 +65,20 @@ public class EducacionController {
         }          
     }
     
-    @GetMapping("/educacion/get/{id}")
+    @GetMapping("/get/{id}")
     @ResponseBody
     public Educacion getEducacion(@PathVariable Long id){
         return iEducacionService.getEducacion(id);
     }
     
-    @GetMapping("/educacion/getAll")    
+    @GetMapping("/getAll")    
     public ResponseEntity<List<Educacion>> getAllEducacion(){
         List<Educacion> list = iEducacionService.getAllEducacion();
         return new ResponseEntity(list,HttpStatus.OK);
     }
     
     //@PreAuthorize("hasRole('ADMIN')")
-    @PutMapping("/educacion/edit")
+    @PutMapping("/edit")
     public ResponseEntity<?> editEducacion(@RequestBody  DtoEducacion dtoEducacion){
         
         if( StringUtils.isBlank(dtoEducacion.getNombre_titulo()) ||
