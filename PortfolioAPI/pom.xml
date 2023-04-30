@@ -117,7 +117,9 @@
 					</excludes>
 				</configuration>
 			</plugin>
+                        
 		</plugins>
+                <finalName>portfolio-dock-img</finalName> 
 	</build>
 
 </project>
