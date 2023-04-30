@@ -30,6 +30,7 @@ com\PruebaPortfolio\Prueba\security\service\UsuarioService.class
 com\PruebaPortfolio\Prueba\security\MainSecurity.class
 com\PruebaPortfolio\Prueba\service\ExperienciaService.class
 com\PruebaPortfolio\Prueba\model\Persona.class
+com\PruebaPortfolio\Prueba\WebConfig.class
 com\PruebaPortfolio\Prueba\model\Experiencia.class
 com\PruebaPortfolio\Prueba\service\EducacionService.class
 com\PruebaPortfolio\Prueba\repository\PersonaRepository.class
