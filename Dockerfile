@@ -4,5 +4,5 @@
 
 FROM amazoncorretto:8
 MAINTAINER Grippo_Miguel
-COPY target/portfolio-dock-img.jar api.jar
-ENTRYPOINT ["java","-jar","/api.jar"]
+COPY target/portfolio.jar portfolio.jar
+ENTRYPOINT ["java","-jar","/portfolio.jar"]
