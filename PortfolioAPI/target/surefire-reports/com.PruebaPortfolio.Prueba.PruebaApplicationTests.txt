@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.PruebaPortfolio.Prueba.PruebaApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.775 s - in com.PruebaPortfolio.Prueba.PruebaApplicationTests
