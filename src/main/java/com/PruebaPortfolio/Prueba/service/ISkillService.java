@@ -4,20 +4,19 @@
  */
 package com.PruebaPortfolio.Prueba.service;
 
-import com.PruebaPortfolio.Prueba.model.Persona;
+import com.PruebaPortfolio.Prueba.model.Skill;
 import java.util.List;
 
 /**
  *
  * @author migue
  */
-public interface IPersonaService {
+public interface ISkillService {
     
-    public Persona getPersona(Long id);
-    public void setPersona(Persona p);
-    public void wipePersona(Long id);
-    public List<Persona> getAllPersona();
-    public void editPersona(Persona p);
+    public Skill getSkill(Long id);
+    public void setSkill(Skill e);
+    public void wipeSkill(Long id);
+    public List<Skill> getAllSkill();
+    public void editSkill(Skill s);
     public boolean existById(Long id);
-
 }

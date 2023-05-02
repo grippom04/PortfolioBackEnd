@@ -2,30 +2,26 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.PruebaPortfolio.Prueba.model;
+package com.PruebaPortfolio.Prueba.DTO;
 
 import java.util.Date;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import lombok.Getter;
-import lombok.Setter;
+import javax.validation.constraints.NotBlank;
 
 
-@Entity
-public class Persona {
+
+public class DtoPersona {
     
-   @Id
-   @GeneratedValue(strategy = GenerationType.AUTO)
    private Long id;
+   
+   @NotBlank
    private String nombre;
+   @NotBlank
    private String apellido;
    private String nacimiento;
    private String descripcion;
    private String img;
 
-    public Persona(String nombre, String apellido, String nacimiento, String descripcion, String img) {
+    public DtoPersona(String nombre, String apellido, String nacimiento, String descripcion, String img) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.nacimiento = nacimiento;
@@ -33,7 +29,7 @@ public class Persona {
         this.img = img;
     }
 
-    public Persona() {
+    public DtoPersona() {
     }
 
     public Long getId() {
@@ -83,8 +79,6 @@ public class Persona {
     public void setImg(String img) {
         this.img = img;
     }
-    
-    
    
    
 }

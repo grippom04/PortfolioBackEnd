@@ -40,4 +40,12 @@ public class PersonaService implements IPersonaService{
        persoRepo.save(p);
     }
     
+     @Override
+     public boolean existById(Long id){
+        boolean retorno = false;
+        if(persoRepo.findById(id).orElse(null)!= null)
+            retorno=true;
+        return retorno;
+    }
+    
 }

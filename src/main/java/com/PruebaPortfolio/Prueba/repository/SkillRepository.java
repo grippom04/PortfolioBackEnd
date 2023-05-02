@@ -4,9 +4,11 @@
  */
 package com.PruebaPortfolio.Prueba.repository;
 
-import com.PruebaPortfolio.Prueba.model.Persona;
+import com.PruebaPortfolio.Prueba.model.Skill;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-
-public interface PersonaRepository extends JpaRepository<Persona, Long>{}
+@Repository
+public interface SkillRepository extends JpaRepository<Skill, Long>{
     
+}
