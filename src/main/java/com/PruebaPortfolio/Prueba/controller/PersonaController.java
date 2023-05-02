@@ -29,7 +29,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/persona")
-@CrossOrigin(origins = "https://portfoliofrontend-mg-d9084.web.app")
+@CrossOrigin(origins = {"https://portfoliofrontend-mg-d9084.web.app","http://localhost:4200"})
 //@CrossOrigin(origins = "http://localhost:4200")
 public class PersonaController {
     //@PreAuthorize("hasRole('ADMIN')")
